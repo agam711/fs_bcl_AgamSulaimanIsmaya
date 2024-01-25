@@ -11,16 +11,7 @@
                 <div class="p-6 text-gray-900">
                     <div class="card bg-white">
                         <div class="card-body">
-                            <form action="{{ route('armadas.store') }}" method="POST">
-                                @csrf
-                                <textarea name="jenis_kendaraan" class="textarea textarea-bordered textarea-lg w-full" rows="3" placeholder="Haloo!"></textarea>
-                                <textarea name="kapasitas" class="textarea textarea-bordered textarea-lg w-full" rows="3" placeholder="Haloo!"></textarea>
-                                <select name="status" class="form-control">
-                                    <option value="tersedia">tersedia</option>
-                                    <option value="tdk tersedia">tdk tersedia</option>
-                                </select>
-                                <input type="submit" value="Post" class="btn btn-success">
-                            </form>
+                            <a href={{ route('viewArmada') }} class="btn btn-primary">View Armada</a>
                         </div>
                     </div>
                 </div>

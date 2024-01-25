@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\Armada\ArmadaDestroyController;
 use App\Http\Controllers\Armada\ArmadaStoreController;
+use App\Http\Controllers\Armada\ArmadaUpdateController;
+use App\Http\Controllers\Armada\ArmadaViewController;
+use App\Http\Controllers\Armada\ArmadaViewStoreController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +27,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::post('armadas', ArmadaStoreController::class)->name('armadas.store');
+Route::get('/viewArmada', ArmadaViewController::class)->middleware(['auth', 'verified'])->name('viewArmada');
+Route::get('/viewStoreArmada', ArmadaViewStoreController::class)->middleware(['auth', 'verified'])->name('viewStoreArmada');
+
+Route::post('/armadas', ArmadaStoreController::class)->name('armadas.store');
+Route::post('/armadasUpdate', ArmadaUpdateController::class)->name('armadas.update');
+Route::post('/armadasDestroy', ArmadaDestroyController::class)->name('armadas.destroy');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
