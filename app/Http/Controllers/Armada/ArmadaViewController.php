@@ -14,6 +14,6 @@ class ArmadaViewController extends Controller
     public function __invoke()
     {
         return view ('armadaView', 
-        ['armadas' => Armada::latest('id')->paginate(5)]);
+        ['armadas' => Armada::oldest('id')->paginate(5)]);
     }
 }

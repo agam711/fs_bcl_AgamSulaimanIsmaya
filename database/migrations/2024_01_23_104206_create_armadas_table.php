@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('armadas', function (Blueprint $table) {
             $table->id();
             $table->string('jenis_kendaraan');
-            $table->enum('status', ['tersedia','tidak tersedia'])->nullable();
-            $table->string('kapasitas');
+            $table->enum('status', ['tersedia','tidak_tersedia'])->default('tersedia');
+            $table->integer('kapasitas');
             $table->timestamps();
         });
     }

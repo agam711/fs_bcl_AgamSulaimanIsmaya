@@ -9,4 +9,10 @@ class Armada extends Model
 {
     use HasFactory;
     protected $fillable = ['kapasitas', 'status', 'jenis_kendaraan'];
+
+    public function pesanan()
+    {
+        return $this->hasMany(Pesanan::class);
+    }
+
 }

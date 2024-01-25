@@ -11,7 +11,10 @@
                 <div class="p-6 text-gray-900">
                     <div class="card bg-white">
                         <div class="card-body">
+                            @if(auth()->user()->usertype=="admin")
                             <a href={{ route('viewArmada') }} class="btn btn-primary">View Armada</a>
+                            @endif
+                            <a href={{ route('viewStorePesanan') }} class="btn btn-primary">View pesanan</a>
                         </div>
                     </div>
                 </div>

@@ -15,7 +15,6 @@ class ArmadaStoreController extends Controller
     {
         Armada::create([
             'jenis_kendaraan' =>  request('jenis_kendaraan'),
-            'status' =>  request('status'),
             'kapasitas' =>  request('kapasitas'),
         ]);
         return redirect()->back();

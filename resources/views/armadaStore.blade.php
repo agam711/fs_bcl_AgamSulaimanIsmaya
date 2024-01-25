@@ -28,18 +28,8 @@
                                     <div class="label">
                                         <span class="label-text">Kapasitas</span>
                                     </div>
-                                    <input name="kapasitas" type="text" placeholder="Type here"
+                                    <input name="kapasitas" type="number" placeholder="Type here"
                                         class="input input-bordered w-full max-w-xs text-white" />
-                                </label>
-                                <label for="form-control w-full max-w-xs">
-                                    <div class="label">
-                                        <span class="label-text">Status</span>
-                                    </div>
-                                        <select name="status" class="select select-bordered w-full max-w-xs text-white">
-                                            <option value="tersedia">tersedia</option>
-                                            <option value="tidak tersedia">tidak tersedia</option>
-                                        </select>
-                                    
                                 </label>
                                 <div>
                                     <input type="submit" class="btn btn-success mt-4">

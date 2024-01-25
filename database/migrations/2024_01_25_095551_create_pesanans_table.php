@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pengirimen', function (Blueprint $table) {
+        Schema::create('pesanans', function (Blueprint $table) {
             $table->id();
-            $table->date('tgl');
-            $table->string('lokasi_asal');
-            $table->string('lokasi_tujuan');
-            $table->enum('status', ['tertunda','dalam perjalanan', 'telah tiba'])->nullable();
+            $table->foreignId('armada_id')->constrained('armadas')->onDelete('cascade')->onUpdate('cascade');
+            $table->date('tgl_psn');
+            $table->integer('berat_barang');
             $table->string('detail_barang');
-            
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pengirimen');
+        Schema::dropIfExists('pesanans');
     }
 };
